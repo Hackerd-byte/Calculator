@@ -29,8 +29,13 @@
     };
 
     const minus=function(e){
-        save+=`-${eval(screen.value)}`;
-        screen.value='';
+        if (screen.value<0){
+            save+=`${eval(screen.value)}`;
+            screen.value='';
+        }else{
+            save+=`-${eval(screen.value)}`;
+            screen.value='';
+        }
     };
     const memoryrecall=function(e){
         if(save === ''){
@@ -96,4 +101,5 @@
     clear.addEventListener('click',(e)=>{
         screen.value='';
     })
+
 })();
